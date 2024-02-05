@@ -89,18 +89,12 @@ footer {
   border-radius: 5px;
   padding-top: 20px;
   text-decoration: none;
-  /* color: inherit; */
 }
 
-/* .navbar .linkButton{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 25%; 
 
-} */
 .menu a {
   color: #fff; /* Customize your menu item color */
   text-decoration: none;
   margin-left: 20px;
+
 }

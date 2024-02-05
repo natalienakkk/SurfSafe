@@ -44,3 +44,8 @@
     color: var(--card-color);
   }
 
+  .PlayButton:hover {
+    background-color: var(--card-color);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+  }

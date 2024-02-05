@@ -16,3 +16,44 @@
   color: white;
   text-align: center;
 }
+
+
+/* Intro image and paragraphs style  */
+
+.FixedImage {
+  position: sticky; 
+  top: 0;
+  padding-top: 0px;
+  padding-left: 0px;
+  margin-top: 45px;
+  width: 68vw;
+  height: auto;
+  z-index: 1;
+}
+
+.ScrollImage{
+  position: relative;
+  width: 68vw;
+}
+
+
+.ScrollContent {
+  position: absolute;
+  right: 0; 
+  top: 50%;
+  width: 30vw; 
+  height: auto; 
+  /* overflow-y: auto;  */
+  max-height: 100vh;
+
+}
+
+.MainIntroContent {
+  width: 100vw;
+  display: flex;
+  /* display: flex; */
+  flex-direction: column;
+  /* position: relative; */
+  
+}
+

@@ -10,14 +10,15 @@ body {
   background: var(--background-color);
   color: #333;
   font-family: "Nunito";
+  margin: 0px;
 }
 a {
   color: #333;
   text-decoration: none;
 }
 .content {
-  max-width: 960px;
-  margin: 0 auto;
+  /* max-width: 960px; */
+  margin: 0;
 }
 
 nav a {
@@ -49,8 +50,9 @@ footer {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: var(--primary-color); /* Customize your navbar background color */
+  background-color: var(--primary-color); 
   box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  z-index: 1000;
 }
 
 .navbar .logo-and-title {

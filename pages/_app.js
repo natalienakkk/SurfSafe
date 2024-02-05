@@ -9,14 +9,5 @@ function App({ Component, pageProps }) {
     </Layout>
   )
 }
-// function App() {
-//   return (
-//     <div className="App">
-//       <Navbar />
-//       <main style={{ paddingTop: '60px' }}>
-//         {/* Your main content goes here, add padding to top to avoid overlap with the fixed AppBar */}
-//       </main>
-//     </div>
-//   );
-// }
+
 export default App

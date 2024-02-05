@@ -80,21 +80,19 @@ footer {
   white-space: nowrap;
 }
 
-.navbar .linkNav {
+ .linkNav {
   text-decoration: none;
   color: white;
   background-color: #0070f3;
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
+  text-decoration: none;
+}
+
+.menu{
   padding-top: 20px;
-  text-decoration: none;
+  margin-top: 20px;
 }
 
 
-.menu a {
-  color: #fff; /* Customize your menu item color */
-  text-decoration: none;
-  margin-left: 20px;
-
-}

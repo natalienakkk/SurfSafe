@@ -4,6 +4,8 @@
   --background-color: #004065;
   --primary-color: #F0F9FF;
   --secondary-color: #002033;
+  --button-color: #46728b;
+  --card-color: #062943;
 }
 
 body {
@@ -78,3 +80,27 @@ footer {
   white-space: nowrap;
 }
 
+.navbar .linkNav {
+  text-decoration: none;
+  color: white;
+  background-color: #0070f3;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  padding-top: 20px;
+  text-decoration: none;
+  /* color: inherit; */
+}
+
+/* .navbar .linkButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%; 
+
+} */
+.menu a {
+  color: #fff; /* Customize your menu item color */
+  text-decoration: none;
+  margin-left: 20px;
+}

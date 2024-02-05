@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/router';
 
 
 const Navbar = () => {
+  const router = useRouter();
   return (
     <nav className="navbar">
       <div className="logo-and-title">
@@ -10,10 +12,11 @@ const Navbar = () => {
         <h1 className="title">Surf Safe</h1>
       </div>
       <div className="menu">
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      {
+        router.pathname === '/start' ?
+        <Link href="/" className="linkNav">Home</Link> : // Show "Home" link when on "/start"
+        <Link href="/start" className="linkNav">Explore&Engage</Link> // Show "Start" link otherwise
+      }
       </div>
     </nav>
   );

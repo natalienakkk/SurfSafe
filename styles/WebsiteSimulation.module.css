@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+
+.ContainerSimulationIntro {
+    display: flex;
+    align-items: flex-start;
+}
+
+.ParaIntroSimulation {
+    margin-top: 150px;
+    margin-left: 2%;
+    flex: 1;
+    padding-right: 20px;
+
+}
+
+.ImgIntroSimulation {
+    width: 61%;
+    margin-top: 80px;
+    text-align: center;
+
+}
+
+.ImgIntroSimulation img {
+    width: 100%;
+    height: auto;
+    opacity: 61%;
+    border-bottom-left-radius: 210px;
+}
+
+.SingleParaSimulation {
+    font-size: 19px;
+    color: var(--primary-color);
+    font-family: 'Questrial';
+    word-spacing: 6px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.UnderImg {
+    font-family: 'Questrial';
+    color: #779CB2;
+    margin-left: 12%;
+    margin-top: 3px;
+    font-size: 18px;
+}

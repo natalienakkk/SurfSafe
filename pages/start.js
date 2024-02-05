@@ -21,6 +21,7 @@ const Start = () => {
         <button className={styles.PlayButton} onClick={() => navigateToPage('/chat')}>Play Now</button>
       </div>
     </div>
+    
   );
 }
 

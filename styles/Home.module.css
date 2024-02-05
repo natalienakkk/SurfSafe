@@ -1,11 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+
+
 .title {
   color: #333;
   padding-bottom: 20px;
   text-align: center;
 }
+
 .text {
   color: #777;
 }
+
 .btn {
   display: block;
   width: 150px;
@@ -17,11 +22,10 @@
   text-align: center;
 }
 
-
 /* Intro image and paragraphs style  */
 
 .FixedImage {
-  position: sticky; 
+  position: fixed;
   top: 0;
   padding-top: 0px;
   padding-left: 0px;
@@ -31,7 +35,7 @@
   z-index: 1;
 }
 
-.ScrollImage{
+.ScrollImage {
   position: relative;
   width: 68vw;
 }
@@ -39,13 +43,14 @@
 
 .ScrollContent {
   position: absolute;
-  right: 0; 
-  top: 50%;
-  width: 30vw; 
-  height: auto; 
+  right: 0;
+  top: 40%;
+  width: 30vw;
+  height: auto;
   /* overflow-y: auto;  */
   max-height: 100vh;
-
+  padding-top: 0px;
+  /* margin-left: 50px; */
 }
 
 .MainIntroContent {
@@ -54,6 +59,29 @@
   /* display: flex; */
   flex-direction: column;
   /* position: relative; */
-  
+
 }
 
+
+/* this is for the paragraphs fonts and titles  */
+
+.SinglePara{
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.SinglePara h1 {
+  font-weight: 50;
+  color: var(--primary-color);
+  font-size: 30px;
+}
+
+.SinglePara p {
+  margin-top: 20px;
+  font-family: 'Questrial';
+  font-size: 20px;
+  color: #8B95A6;
+  padding-bottom: 200px;
+  word-spacing: 5px;
+  line-height: 1.5;
+}

@@ -89,28 +89,30 @@ export default function Home() {
       {/* <IntroParas /> */}
   
       <div className={styles.ScrollContent}>
+        <div className={styles.SinglePara}>
       <h1>"Welcome, Safe Surfers"</h1> 
       <p>
-        "Dive into a sea of knowledge and fun as we embark \
-        on an exciting journey to master the art of safe internet use together!",
+        Dive into a sea of knowledge and fun as we embark 
+        on an exciting journey to master the art of safe internet use together!,
       </p>
-    
+      </div>
     <br></br>
   
-    
+      <div className={styles.SinglePara}>
       <h1>"World of Adventure"</h1> 
       <p>
-        "Step into a world of adventure with our vivid simulations and captivating \
-        chat scenarios, crafted to make you an internet safety hero! Here, \
-        you'll master the skills to dodge online threats and become a wise explorer\
-        of the digital universe, all while having the time of your life!\"",
+        Step into a world of adventure with our vivid simulations and captivating 
+        chat scenarios, crafted to make you an internet safety hero! Here, 
+        you'll master the skills to dodge online threats and become a wise explorer
+        of the digital universe, all while having the time of your life!,
       </p>
-    
+    </div>
 <br></br>
     
-    
+<div className={styles.SinglePara}>
       <h1>"Let's Get Started!"</h1> 
-      <img src="/child.png" width={274} height={164}></img>
+      <img src="/child.png" width={274} height={174}></img>
+      </div>
       </div>
     </div>
   );

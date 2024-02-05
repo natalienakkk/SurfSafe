@@ -44,3 +44,63 @@
     margin-top: 3px;
     font-size: 18px;
 }
+
+.DividerStyle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    background-color: var(--primary-color);
+    position: relative;
+}
+
+.DividerTitleStyle {
+    position: absolute;
+    color:  var(--background-color);
+    background-color: transparent;
+    padding: 0 10px;
+}
+
+.ServicesContainer{
+    padding-top: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh;
+    /* Gap between the cards */
+    gap: 40px;
+    padding-bottom: 120px;
+    margin-bottom: 120px;
+}
+
+.SingleService {
+    padding-top: 0;
+    width: 300px;
+    margin-top: 250px;
+    height: auto;
+    justify-content: space-between;
+    background-color: var(--card-color);
+    padding-bottom: 10px;
+    border-radius: 15px;
+  }
+
+  .SingleService img {
+    border-radius: 15px;
+    max-width: 100%;
+    opacity: 50%;
+  }
+
+  .SingleService :hover{
+    opacity: 100%;
+  }
+
+.SingleServiceDetails{
+    text-align: center;
+    color: var(--primary-color);
+    font-family: 'Questrial';
+    font-size: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+

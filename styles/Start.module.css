@@ -43,7 +43,6 @@
     font-size: 16px;
     color: var(--card-color);
   }
-
   .PlayButton:hover {
     background-color: var(--card-color);
     color: var(--primary-color);

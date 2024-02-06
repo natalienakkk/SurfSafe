@@ -4,7 +4,7 @@ import ReusableModal from "../comps/ReusableModal";
 import React, { useState } from "react";
 import Modal from "react-modal";
 
-import VisaInfo from "./visaInfo";
+// import VisaInfo from "./visaInfo";
 function SimulationIntro() {
   return (
     <div className={styles.ContainerSimulationIntro}>
@@ -50,7 +50,7 @@ function EducationalSection() {
   const openPurchacePopUp = () => setPurchacePopUp(true);
   const closePurchacePopUp = () => setPurchacePopUp(false);
 
-    //One on One  lesson, ERROR! 
+  //One on One  lesson, ERROR! 
 
   const [popUpIsOpen, setPopUpIsOpen] = useState(false);
   const [nextPopUp, setnextPopUp] = useState(false);
@@ -58,45 +58,45 @@ function EducationalSection() {
   const closeNextPopUp = () => setnextPopUp(false);
   const [inputValue, setInputValue] = useState('');
 
-  // const handleInputChange = (event) => {
-  //   setInputValue(event.target.value);
-  // };
   const openFreePopUp = () => setPopUpIsOpen(true);
-// 
+
   return (<div>
     <div className={styles.ServicesContainer}>
 
       <div className={styles.SingleService}>
-        <img src="/groupLesson.webp" alt="Group Lesson" role="button" onClick={()=>openPurchacePopUp()} />
+        <img src="/privateLesson.webp" alt="Group Lesson" role="button" onClick={() => openPurchacePopUp()} />
         {/* <div> */}
-          {/* <VisaInfo/> */}
+        {/* <VisaInfo/> */}
         {/* </div> */}
         <p className={styles.SingleServiceDetails}>
-          Boost your skills in a fun group setting!
-          Buy a Group Lesson now—learn together, save money, and make new friends.
+        Experience personalized growth with a FREE one-on-one lesson,
+         all while using your camera! Dive in, engage, and excel!
         </p>
         <br></br>
         <br></br>
         <div>
-        <button className={styles.PurchaseButton} onClick={()=>openPurchacePopUp()}>Join Now Free!</button>
+          <button className={styles.PurchaseButton} onClick={() => openPurchacePopUp()}>Join Now FREE!</button>
         </div>
       </div>
       <div className={styles.SingleService}>
-        <img src="/privateLesson.webp" alt="One on One Lesson" role="button" onClick={openNextPopUp} />
+        <img src="/groupLesson.webp" alt="One on One Lesson" role="button" onClick={openNextPopUp} />
         <p className={styles.SingleServiceDetails}>
-          Boost your skills in a fun group setting!
+        Boost your skills in a fun group setting!
           Buy a Group Lesson now—learn together, save money, and make new friends.
         </p>
         <br></br>
         <br></br>
-        <button className={styles.PurchaseButton} onClick={()=>{(openFreePopUp(),console.log("clickeeed!!!") )}}>Join Now Free!</button>
+        <button className={styles.PurchaseButton} onClick={() => { (openFreePopUp(), console.log("clickeeed!!!")) }}>Join The Fun</button>
       </div>
     </div>
+
+    {/* This is the free Option  */}
     <ReusableModal
-            isOpen={purchacePopUp}
-            onClose={closePurchacePopUp}
-            title="Warning Message"
-            content="Please be aware of potential risks:
+      isOpen={purchacePopUp}
+      onClose={closePurchacePopUp}
+      title="Warning Message"
+      content="
+      Please be aware of potential risks: 
 
        **Don't Open Camera for Strangers!** 
       
@@ -107,33 +107,35 @@ function EducationalSection() {
       If anything seems off or raises doubts, be cautious. Verify the legitimacy of the lesson and the person on the other end before proceeding. Your safety is our top priority.
       
       Stay vigilant, and prioritize your security at all times during remote interactions."
-          />
+    />
 
-<Modal
-            isOpen={popUpIsOpen}
-            onRequestClose={() => setPopUpIsOpen(false)}
-            contentLabel="Visa Info"
-          >
-            <p>Hello!
-                Please enter Your credit card info:
-            </p>
-            <input
-          type="text"
-          value={inputValue}
-          placeholder="Credit Card"
-        />
-            <button onClick={() => setPopUpIsOpen(false)}>Close</button>
-            <button onClick={openNextPopUp}>Submit</button>
-            <ReusableModal
-              isOpen={nextPopUp}
-              onClose={closeNextPopUp}
-              title="Warning Message"
-              content="Hey there! 
+    <Modal
+      isOpen={popUpIsOpen}
+      onRequestClose={() => setPopUpIsOpen(false)}
+      contentLabel="Visa Info"
+    >
+      <p>Hello!
+        Please enter Your credit card info:
+      </p>
+      <input
+        type="text"
+        value={inputValue}
+        placeholder="Credit Card"
+      />
+      <button onClick={() => setPopUpIsOpen(false)}>Close</button>
+      <button onClick={openNextPopUp}>Submit</button>
 
+      {/* This is the group lesson option  */}
+      <ReusableModal
+        isOpen={nextPopUp}
+        onClose={closeNextPopUp}
+        title="Warning Message"
+        content="Hey there! 
+            <br>
               We want to make sure you're staying safe online, especially when it comes to your personal information. Remember these tips:
-              
+              <br>
                **Keep Your Card Close:** Never share your credit card info online unless a trusted adult says it's okay. It's like a secret code only grown-ups should handle.
-              
+               <br>
                **Check Before You Click:** If a website feels weird or asks for too much info, ask a grown-up for help. It's better to be safe!
               
               **Look for the Lock:** When shopping or sharing on a website, check if there's a little lock in the address bar (https://). That means it's more secure!
@@ -144,9 +146,9 @@ function EducationalSection() {
               
               Cheers,
               Surf Safe Team"
-            />
-          </Modal>
-    </div>
+      />
+    </Modal>
+  </div>
   );
 }
 
@@ -158,8 +160,97 @@ function Divider({ title }) {
   );
 }
 
-function PrizeSection() {
+// function PrizeSection() {
+//   const containerStyle = {
+//     display: 'flex', // This enables flex layout
+//     width: '100%', // Full width of the container
+//   };
 
+//   const rightImageStyle = {
+//     width: '30%', // Take up half of the container's width
+//     // marginRight: 'auto', // Ensures it stays on the left
+//   };
+
+//   const leftSideStyle = {
+//     width: '50%', // Take up the other half of the container's width
+//     position: 'relative', // Allows for absolute positioning inside
+//   };
+
+//   const paragraphStyle = {
+//     position: 'absolute', // Position over the image
+//     top: 0, // At the top of the container
+//     left: 0, // Aligned to the left
+//     right: 0, // Aligned to the right
+//     margin: '10px', // Add some margin
+//     backgroundColor: 'rgba(255,255,255,0.5)', // Semi-transparent background
+//     padding: '10px', // Padding inside the paragraph
+//   };
+
+//   return (
+//     <div style={containerStyle}>
+//       <div style={leftSideStyle}>
+//         <p style={paragraphStyle}>This is a paragraph on top of the right image.</p>
+//         <img src="sideBar.png" alt="Right" style={{ width: '100%', height: 'auto' }} />
+//       </div>
+//       <img src="ClickMe.png" alt="Left" style={rightImageStyle} />
+
+//     </div>
+//   );
+// }
+function PrizeSection() {
+  const containerStyle = {
+    display: 'flex', // Enables flex layout
+    width: '100%', // Full width of the container
+  };
+
+  const leftSideStyle = {
+    width: '100%', // Adjusted for 70% of the container's width if you want the other image to be 30%
+    display: 'flex', // Use flex to align items inside vertically
+    flexDirection: 'column', // Stack items vertically
+    // alignItems: 'center', // Center items horizontally
+    position: 'relative', // For absolute positioning of the paragraph
+  };
+
+  const paragraphStyle = {
+    position: 'absolute', // Position over the container
+    top: 10,
+    margin: (50,150,200,100),
+    backgroundColor: 'transparent',
+    padding: '10px',
+    width: '44%',
+    color: 'rgb(240,249,255)',
+    wordSpacing: '7px', // Corrected property name
+    lineHeight: '1.5',
+    fontSize: '16px',
+  };
+
+  const leftImageStyle = {
+    width: '60%', // Right image takes up 30% of the container's width
+  };
+
+  const rightImageStyle = {
+    width: '50px', // Width of 50 pixels
+    height: '50px', // Height of 50 pixels
+  };
+
+  return (
+    <div style={containerStyle}>
+      <div style={leftSideStyle}>
+        <p style={paragraphStyle}>
+
+        Discover the extraordinary with a single click!
+        <br></br><br></br>
+         Click now and embark on an adventure that promises
+         to transform your day with hidden gems and insider knowledge.
+          Your journey to excitement is just one click away!
+          <br></br>
+          Don't let curiosity fade;
+        </p>
+        <img src="sideBar.png" alt="Sidebar" style={leftImageStyle} />
+      </div>
+      <img src="ClickMe.png" alt="Click Me" style={rightImageStyle} />
+    </div>
+  );
 }
 
 const WebsiteSimulation = () => {

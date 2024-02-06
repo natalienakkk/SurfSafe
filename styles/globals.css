@@ -85,7 +85,7 @@ footer {
  .linkNav {
   text-decoration: none;
   color: white;
-  background-color: #0070f3;
+  background-color: var(--card-color);
   padding: 0.5rem 1rem;
   cursor: pointer;
   border-radius: 5px;
@@ -93,8 +93,8 @@ footer {
 }
 
 .menu{
-  padding-top: 20px;
+  padding-top: 20 px;
   margin-top: 20px;
-  margin-right: 20px;
+  margin-right: 40px;
 }
 

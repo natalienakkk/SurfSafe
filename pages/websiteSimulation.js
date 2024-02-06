@@ -258,8 +258,8 @@ function PrizeSection() {
           Don't let curiosity fade;
         </p>
         <img src="sideBar.png" alt="Sidebar" style={leftImageStyle} /> 
-             <img src="ClickMe.png" alt="Click Me" style={rightImageStyle} onClick={()=>{
-
+             <img src="ClickMe.png" alt="Click Me" style={rightImageStyle} role="button" onClick={()=>{
+                console.log('They Clicked ME!!!!');
               // TODO Shaden
              }} />
       </div>

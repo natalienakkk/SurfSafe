@@ -15,7 +15,7 @@ const Navbar = () => {
       {
         router.pathname === '/start' ?
         <Link href="/" className="linkNav">Home</Link> : // Show "Home" link when on "/start"
-        <Link href="/start" className="linkNav">Explore&Engage</Link> // Show "Start" link otherwise
+        <Link href="/start" className="linkNav">Explore & Engage</Link> // Show "Start" link otherwise
       }
       </div>
     </nav>

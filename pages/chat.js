@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 
 function Chat() {
   const router = useRouter()
-
+  const messagesEndRef = useRef(null);
   const [selectedChoice, setSelectedChoice] = useState('');
   const [messages, setMessages] = useState([]);
   const [choices, setChoices] = useState([]);
@@ -17,6 +17,13 @@ function Chat() {
     handleChoiceSelect('')
   }, []);
   
+  useEffect(() => {
+    if (messagesEndRef.current) {
+    messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+    }
+  }, [messages]);
+  
+
   const handleChoiceSelect = async (choice) => {
     setSelectedChoice(choice);
     setMessages([...messages, ` ${choice}`]);
@@ -47,7 +54,7 @@ function Chat() {
           <img src="/sally-avatar.png" className = "bot-profile"></img>
           <h2 className = "bot-name"> Sally </h2>        
         </div>
-        <div className="messages">
+        <div ref={messagesEndRef} className="messages">
           {messages.map((msg, index) => (
               <div key={index} className={`message ${index % 2 === 1 ? 'bot-message' : 'user-message'}`} > {msg} </div>   
         ))} 

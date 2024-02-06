@@ -28,7 +28,7 @@
     max-width: 100%;
 
   }
-/* 
+
   .PlayButton {
     margin-top: auto;
     position: absolute;
@@ -42,10 +42,10 @@
     font-family: 'Questrial', sans-serif;
     font-size: 16px;
     color: var(--card-color);
-  } */
+  }
 
-  /* .PlayButton:hover {
+  .PlayButton:hover {
     background-color: var(--card-color);
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
-  } */
+  }

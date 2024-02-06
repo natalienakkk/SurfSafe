@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/WebsiteSimulation.module.css'
+import ReusableModal from "../comps/ReusableModal";
+import React, { useState } from "react";
+import Modal from "react-modal";
 
+import VisaInfo from "./visaInfo";
 function SimulationIntro() {
   return (
     <div className={styles.ContainerSimulationIntro}>
@@ -25,44 +29,123 @@ function SimulationIntro() {
 
 // TODO: add the buy buttons anc connect them to the pop up explaining why this is a risky link
 
-function PurchaseButtonPopUp(){
+function PurchaseButtonPopUp() {
   // TODO Shaden - Pop Up 
   // When the User tries to purchase the group lesson, 
   // this button open a pop up that asks for the user visa card with a sumbit button, 
   // if the user types a use card and sumbits, it displays a warning explaining the risk
+  console.log('Button clicked!')
 }
 
-function JoinForFreeButton(){
+function JoinForFreeButton() {
   //TODO Shaden - Pop up
   // explain the risk - this is a free lesson one on one, with camera remotly!!
   // Dont open camera for strangers! this smells fishy!!!
+  console.log('Button clicked!')
 }
 
 function EducationalSection() {
-  return (
+  // Group lesson, works! 
+  const [purchacePopUp, setPurchacePopUp] = useState(false);
+  const openPurchacePopUp = () => setPurchacePopUp(true);
+  const closePurchacePopUp = () => setPurchacePopUp(false);
+
+    //One on One  lesson, ERROR! 
+
+  const [popUpIsOpen, setPopUpIsOpen] = useState(false);
+  const [nextPopUp, setnextPopUp] = useState(false);
+  const openNextPopUp = () => setnextPopUp(true);
+  const closeNextPopUp = () => setnextPopUp(false);
+  const [inputValue, setInputValue] = useState('');
+
+  // const handleInputChange = (event) => {
+  //   setInputValue(event.target.value);
+  // };
+  const openFreePopUp = () => setPopUpIsOpen(true);
+// 
+  return (<div>
     <div className={styles.ServicesContainer}>
 
       <div className={styles.SingleService}>
-        <img src="/groupLesson.webp" alt="Group Lesson" role="button" onClick={()=>PurchaseButtonPopUp()}/>
+        <img src="/groupLesson.webp" alt="Group Lesson" role="button" onClick={()=>openPurchacePopUp()} />
+        {/* <div> */}
+          {/* <VisaInfo/> */}
+        {/* </div> */}
         <p className={styles.SingleServiceDetails}>
           Boost your skills in a fun group setting!
           Buy a Group Lesson now—learn together, save money, and make new friends.
         </p>
         <br></br>
         <br></br>
-      <button className={styles.PurchaseButton} onClick={() => PurchaseButtonPopUp()}>Join the fun!</button>
-    </div>
-
-      <div className={styles.SingleService}>
-        <img src="/privateLesson.webp" alt="One on One Lesson"  role="button" onClick={()=>JoinForFreeButton()}/>
-        <p className={styles.SingleServiceDetails}>
-          Boost your skills in a fun group setting!
-          Buy a Group Lesson now—learn together, save money, and make new friends.
-        </p>
-        <br></br>
-        <br></br> 
-      <button  className={styles.PurchaseButton} onClick={() => JoinForFreeButton()}>Join Now Free!</button>
+        <div>
+        <button className={styles.PurchaseButton} onClick={()=>openPurchacePopUp()}>Join Now Free!</button>
+        </div>
       </div>
+      <div className={styles.SingleService}>
+        <img src="/privateLesson.webp" alt="One on One Lesson" role="button" onClick={openNextPopUp} />
+        <p className={styles.SingleServiceDetails}>
+          Boost your skills in a fun group setting!
+          Buy a Group Lesson now—learn together, save money, and make new friends.
+        </p>
+        <br></br>
+        <br></br>
+        <button className={styles.PurchaseButton} onClick={()=>{(openFreePopUp(),console.log("clickeeed!!!") )}}>Join Now Free!</button>
+      </div>
+    </div>
+    <ReusableModal
+            isOpen={purchacePopUp}
+            onClose={closePurchacePopUp}
+            title="Warning Message"
+            content="Please be aware of potential risks:
+
+       **Don't Open Camera for Strangers!** 
+      
+      Opening your camera to unknown individuals poses security risks. Your privacy and safety are paramount. If something feels suspicious or uncomfortable, trust your instincts and refrain from sharing your camera feed.
+      
+       **This Smells Fishy!** 
+      
+      If anything seems off or raises doubts, be cautious. Verify the legitimacy of the lesson and the person on the other end before proceeding. Your safety is our top priority.
+      
+      Stay vigilant, and prioritize your security at all times during remote interactions."
+          />
+
+<Modal
+            isOpen={popUpIsOpen}
+            onRequestClose={() => setPopUpIsOpen(false)}
+            contentLabel="Visa Info"
+          >
+            <p>Hello!
+                Please enter Your credit card info:
+            </p>
+            <input
+          type="text"
+          value={inputValue}
+          placeholder="Credit Card"
+        />
+            <button onClick={() => setPopUpIsOpen(false)}>Close</button>
+            <button onClick={openNextPopUp}>Submit</button>
+            <ReusableModal
+              isOpen={nextPopUp}
+              onClose={closeNextPopUp}
+              title="Warning Message"
+              content="Hey there! 
+
+              We want to make sure you're staying safe online, especially when it comes to your personal information. Remember these tips:
+              
+               **Keep Your Card Close:** Never share your credit card info online unless a trusted adult says it's okay. It's like a secret code only grown-ups should handle.
+              
+               **Check Before You Click:** If a website feels weird or asks for too much info, ask a grown-up for help. It's better to be safe!
+              
+              **Look for the Lock:** When shopping or sharing on a website, check if there's a little lock in the address bar (https://). That means it's more secure!
+              
+              **Ask Questions:** If something seems fishy or you're not sure, don't be afraid to ask a parent, guardian, or teacher. They're there to help you.
+              
+              Remember, your safety is super important to us! If you ever feel unsure about anything online, it's okay to ask for help. Stay smart and have fun exploring the web! 🌐💙
+              
+              Cheers,
+              Surf Safe Team"
+            />
+          </Modal>
     </div>
   );
 }
@@ -73,6 +156,10 @@ function Divider({ title }) {
       <h2 className={styles.DividerTitleStyle}>{title}</h2>
     </div>
   );
+}
+
+function PrizeSection() {
+
 }
 
 const WebsiteSimulation = () => {
@@ -89,6 +176,10 @@ const WebsiteSimulation = () => {
       <br></br>
       {<Divider title="Purchase Our Services Today!" />}
       {EducationalSection()}
+      <br></br>
+      <br></br>
+      {PrizeSection()}
+
     </>
   );
 }

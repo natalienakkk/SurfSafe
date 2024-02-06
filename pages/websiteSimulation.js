@@ -60,6 +60,14 @@ function EducationalSection() {
 
   const openFreePopUp = () => setPopUpIsOpen(true);
 
+  const VisaModal = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      zIndex: 700,
+    },
+  };
+  
+
   return (<div>
     <div className={styles.ServicesContainer}>
 
@@ -109,7 +117,7 @@ function EducationalSection() {
       Stay vigilant, and prioritize your security at all times during remote interactions."
     />
 
-    <Modal
+    <Modal style={VisaModal} 
       isOpen={popUpIsOpen}
       onRequestClose={() => setPopUpIsOpen(false)}
       contentLabel="Visa Info"
@@ -131,11 +139,11 @@ function EducationalSection() {
         onClose={closeNextPopUp}
         title="Warning Message"
         content="Hey there! 
-            <br>
+            
               We want to make sure you're staying safe online, especially when it comes to your personal information. Remember these tips:
-              <br>
+              
                **Keep Your Card Close:** Never share your credit card info online unless a trusted adult says it's okay. It's like a secret code only grown-ups should handle.
-               <br>
+               
                **Check Before You Click:** If a website feels weird or asks for too much info, ask a grown-up for help. It's better to be safe!
               
               **Look for the Lock:** When shopping or sharing on a website, check if there's a little lock in the address bar (https://). That means it's more secure!

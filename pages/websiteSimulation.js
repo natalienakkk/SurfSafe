@@ -60,13 +60,21 @@ function EducationalSection() {
 
   const openFreePopUp = () => setPopUpIsOpen(true);
 
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   const VisaModal = {
     overlay: {
       backgroundColor: 'rgba(0, 0, 0, 0.75)',
       zIndex: 700,
     },
   };
-  
+
 
   return (<div>
     <div className={styles.ServicesContainer}>
@@ -77,8 +85,8 @@ function EducationalSection() {
         {/* <VisaInfo/> */}
         {/* </div> */}
         <p className={styles.SingleServiceDetails}>
-        Experience personalized growth with a FREE one-on-one lesson,
-         all while using your camera! Dive in, engage, and excel!
+          Experience personalized growth with a FREE one-on-one lesson,
+          all while using your camera! Dive in, engage, and excel!
         </p>
         <br></br>
         <br></br>
@@ -89,7 +97,7 @@ function EducationalSection() {
       <div className={styles.SingleService}>
         <img src="/groupLesson.webp" alt="One on One Lesson" role="button" onClick={openNextPopUp} />
         <p className={styles.SingleServiceDetails}>
-        Boost your skills in a fun group setting!
+          Boost your skills in a fun group setting!
           Buy a Group Lesson now—learn together, save money, and make new friends.
         </p>
         <br></br>
@@ -117,19 +125,25 @@ function EducationalSection() {
       Stay vigilant, and prioritize your security at all times during remote interactions."
     />
 
-    <Modal style={VisaModal} 
+    <Modal style={VisaModal}
       isOpen={popUpIsOpen}
       onRequestClose={() => setPopUpIsOpen(false)}
       contentLabel="Visa Info"
     >
-      <p>Hello!
-        Please enter Your credit card info:
-      </p>
-      <input
-        type="text"
-        value={inputValue}
-        placeholder="Credit Card"
-      />
+
+      <form onSubmit={handleSubmit}>
+        <p>Hello!
+          Please enter Your credit card info:
+        </p>
+        <input
+          type="text"
+          value={inputValue}
+          placeholder="Credit Card"
+          onChange={handleInputChange}
+        />
+      </form>
+
+
       <button onClick={() => setPopUpIsOpen(false)}>Close</button>
       <button onClick={openNextPopUp}>Submit</button>
 
@@ -206,6 +220,21 @@ function Divider({ title }) {
 //   );
 // }
 function PrizeSection() {
+  const [prizePopUpIsOpen, setPrizePopUp] = useState(false);
+  const [snextPopUp, setSnextPopUp] = useState(false);
+  const openPrizePopUp = () => setPrizePopUp(true);
+  const opensNextPopUp = () => setSnextPopUp(true);
+  const closesNextPopUp = () => setSnextPopUp(false);
+  const [inputValue, setInputValue] = useState('');
+
+  const handleInputChange = (event) => {
+    setInputValue(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   const containerStyle = {
     // display: 'flex', // Enables flex layout
     // width: '100%', // Full width of the container
@@ -221,10 +250,16 @@ function PrizeSection() {
     position: 'relative', // For absolute positioning of the paragraph
   };
 
+  const prizeModal = {
+    overlay: {
+      backgroundColor: 'rgba(0, 0, 0, 0.75)',
+      zIndex: 700,
+    },
+  };
   const paragraphStyle = {
     position: 'absolute', // Position over the container
     top: 10,
-    margin: (50,150,200,100),
+    margin: (50, 150, 200, 100),
     backgroundColor: 'transparent',
     padding: '10px',
     width: '44%',
@@ -249,7 +284,7 @@ function PrizeSection() {
     // alignSelf: 'center', // Aligns this item (not align) in the center of the flex direction
     // marginLeft: 'auto', // This helps in pushing the image towards the center/right
     // marginRight: 'auto', // Use margin auto for centering in the available space
-    margin: (250,0,0,150),
+    margin: (250, 0, 0, 150),
   };
 
   return (
@@ -257,22 +292,48 @@ function PrizeSection() {
       <div style={leftSideStyle}>
         <p style={paragraphStyle}>
 
-        Discover the extraordinary with a single click!
-        <br></br><br></br>
-         Click now and embark on an adventure that promises
-         to transform your day with hidden gems and insider knowledge.
+          Discover the extraordinary with a single click!
+          <br></br><br></br>
+          Click now and embark on an adventure that promises
+          to transform your day with hidden gems and insider knowledge.
           Your journey to excitement is just one click away!
           <br></br>
           Don't let curiosity fade;
         </p>
-        <img src="sideBar.png" alt="Sidebar" style={leftImageStyle} /> 
-             <img src="ClickMe.png" alt="Click Me" style={rightImageStyle} role="button" onClick={()=>{
-                console.log('They Clicked ME!!!!');
-              // TODO Shaden
-             }} />
-      </div>
+        <img src="sideBar.png" alt="Sidebar" style={leftImageStyle} />
+        <img src="ClickMe.png" alt="Click Me" style={rightImageStyle} role="button" onClick={openPrizePopUp} />
 
+
+      </div>
+      <Modal style={prizeModal}
+        isOpen={prizePopUpIsOpen}
+        onRequestClose={() => setPrizePopUp(false)}
+        contentLabel="Prize"
+      >
+        <form onSubmit={handleSubmit}>
+          <h1>Congratulations!!</h1>
+          <p>You have won a prize!</p>
+          <p>We need your home address to ensure a smooth delivery. Please provide the following details:</p>
+          <input
+            type="text"
+            value={inputValue}
+            onChange={handleInputChange}
+            placeholder="streetAddress,city,state,zipCode"
+          />
+        </form>
+        <button onClick={() => setPrizePopUp(false)}>Close</button>
+        <button onClick={opensNextPopUp}>Submit</button>
+        <ReusableModal
+          isOpen={snextPopUp}
+          onClose={closesNextPopUp}
+          title="Warning Message"
+          content="Attention: Your safety online is crucial!
+              Entering your home address on random or untrustworthy websites can expose you to various risks and dangers.
+              Please be cautious and avoid entering your home address or any personal information on random websites across the internet."
+        />
+      </Modal>
     </div>
+
   );
 }
 

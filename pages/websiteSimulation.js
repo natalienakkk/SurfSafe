@@ -199,14 +199,16 @@ function Divider({ title }) {
 // }
 function PrizeSection() {
   const containerStyle = {
-    display: 'flex', // Enables flex layout
-    width: '100%', // Full width of the container
+    // display: 'flex', // Enables flex layout
+    // width: '100%', // Full width of the container
+    // flexDirection:'column',
+    // gap: '10px',
   };
 
   const leftSideStyle = {
     width: '100%', // Adjusted for 70% of the container's width if you want the other image to be 30%
-    display: 'flex', // Use flex to align items inside vertically
-    flexDirection: 'column', // Stack items vertically
+    // display: 'flex', // Use flex to align items inside vertically
+    // flexDirection: 'column', // Stack items vertically
     // alignItems: 'center', // Center items horizontally
     position: 'relative', // For absolute positioning of the paragraph
   };
@@ -228,9 +230,18 @@ function PrizeSection() {
     width: '60%', // Right image takes up 30% of the container's width
   };
 
+  // const rightImageStyle = {
+  //   width: '250px', // Width of 50 pixels
+  //   height: '250px', // Height of 50 pixels
+  //   align: 'center',
+  // };
   const rightImageStyle = {
-    width: '50px', // Width of 50 pixels
-    height: '50px', // Height of 50 pixels
+    width: '170px', // Specific width
+    height: '170px', // Specific height
+    // alignSelf: 'center', // Aligns this item (not align) in the center of the flex direction
+    // marginLeft: 'auto', // This helps in pushing the image towards the center/right
+    // marginRight: 'auto', // Use margin auto for centering in the available space
+    margin: (250,0,0,150),
   };
 
   return (
@@ -246,9 +257,13 @@ function PrizeSection() {
           <br></br>
           Don't let curiosity fade;
         </p>
-        <img src="sideBar.png" alt="Sidebar" style={leftImageStyle} />
+        <img src="sideBar.png" alt="Sidebar" style={leftImageStyle} /> 
+             <img src="ClickMe.png" alt="Click Me" style={rightImageStyle} onClick={()=>{
+
+              // TODO Shaden
+             }} />
       </div>
-      <img src="ClickMe.png" alt="Click Me" style={rightImageStyle} />
+
     </div>
   );
 }

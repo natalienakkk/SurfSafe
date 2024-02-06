@@ -25,29 +25,43 @@ function SimulationIntro() {
 
 // TODO: add the buy buttons anc connect them to the pop up explaining why this is a risky link
 
-function EducationalSection() { 
+function PurchaseButtonPopUp(){
+  // TODO Shaden - Pop Up 
+  // When the User tries to purchase the group lesson, 
+  // this button open a pop up that asks for the user visa card with a sumbit button, 
+  // if the user types a use card and sumbits, it displays a warning explaining the risk
+}
+
+function JoinForFreeButton(){
+  //TODO Shaden - Pop up
+  // explain the risk - this is a free lesson one on one, with camera remotly!!
+  // Dont open camera for strangers! this smells fishy!!!
+}
+
+function EducationalSection() {
   return (
     <div className={styles.ServicesContainer}>
-      <div className={styles.SingleService}>
-        <img src="/groupLesson.webp" alt="Group Lesson" />
-        <p className={styles.SingleServiceDetails}>
-          Boost your skills in a fun group setting!
-          Buy a Group Lesson now—learn together, save money, and make new friends. 
-          <br></br>
-          Join the fun!
-          </p>
-        {/* <button className={styles.PlayButton} onClick={() => navigateToPage('/websiteSimulation')}>Play Now</button> */}
-      </div>
 
       <div className={styles.SingleService}>
-          <img src="/privateLesson.webp" alt="One on One Lesson" />
-          <p className={styles.SingleServiceDetails}>
+        <img src="/groupLesson.webp" alt="Group Lesson" role="button" onClick={()=>PurchaseButtonPopUp()}/>
+        <p className={styles.SingleServiceDetails}>
           Boost your skills in a fun group setting!
           Buy a Group Lesson now—learn together, save money, and make new friends.
-          <br></br>
-          Join Now Free! 
-          </p>
-          {/* <button className={styles.PlayButton} onClick={() => navigateToPage('/chat')}>Play Now</button> */}
+        </p>
+        <br></br>
+        <br></br>
+      <button className={styles.PurchaseButton} onClick={() => PurchaseButtonPopUp()}>Join the fun!</button>
+    </div>
+
+      <div className={styles.SingleService}>
+        <img src="/privateLesson.webp" alt="One on One Lesson"  role="button" onClick={()=>JoinForFreeButton()}/>
+        <p className={styles.SingleServiceDetails}>
+          Boost your skills in a fun group setting!
+          Buy a Group Lesson now—learn together, save money, and make new friends.
+        </p>
+        <br></br>
+        <br></br> 
+      <button  className={styles.PurchaseButton} onClick={() => JoinForFreeButton()}>Join Now Free!</button>
       </div>
     </div>
   );

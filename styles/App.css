@@ -1,0 +1,80 @@
+.App {
+  text-align: center;
+  background-image: linear-gradient(to right, #716660 10%, #365258 70%);
+  padding: 100px;
+}
+
+.chat-box {
+  background-image: linear-gradient(to bottom, #233b42 20px, #0B1321 100px);
+  border: 1px solid #365258;
+  border-radius: 20px;
+  padding: 10px;
+  width: 700px;
+  height:450px;
+  margin: 20px auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Aligns children at the start and end of container */
+}
+
+.messages {
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 1px solid #004c4c;
+  border-radius: 20px;
+  flex-grow: 1;
+}
+
+.message {
+  background-color: #A9A9A9;
+  align-self: center;
+}
+
+.choices{
+  color: #2c4f54;
+}
+
+.choice-button {
+  color: black;
+  background-color: #66b2b2;
+  width:200px;
+  height:100px;
+  align-self: center;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  margin-top: auto;
+  border-radius: 20px;
+  border-color: #66b2b2;
+}
+
+.choice-button:hover {
+  background-color: #004c4c;
+  color: white;
+  border-color: #66b2b2;
+}
+
+.choice-button.selected {
+  background-color: #269c7d;
+}
+
+.send-button {
+  /* Add your styles here */
+  padding: 10px 20px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  align-self: center; /* Center button horizontally */
+  margin-top: auto; /* Pushes the button to the bottom */
+  width: 100%;
+}
+
+.send-button:hover {
+  /* Style for hover state */
+  background-color: black;
+ color: white;
+}

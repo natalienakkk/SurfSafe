@@ -7,6 +7,8 @@
 ## Table of Contents
 
 - [Features](#features)
+  - [Interactive Website Simulations](#interactive-website-simulations)
+  - [Chat Interactions](#chat-interactions)
 - [Technology Stack](#technology-stack)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -15,8 +17,10 @@
 
 ## Features
 
--  Interactive Website Simulations: The platform offers interactive simulations that allow users to navigate through various online scenarios without exposing themselves to actual risk. Whether it involves evaluating suspicious links, deciding against sharing credit card information, or refraining from sending personal addresses, users can explore the consequences of their actions in a safe environment.
--   Chat Interactions: Our chat feature is a simulated environment that replicates conversations with strangers, providing users with predetermined response options rather than allowing free text. When a user selects an answer, if the choice involves a potential risk, we promptly inform and educate them about the dangers involved. This interactive experience is designed to teach users the dos and don'ts of communicating with unknown individuals online.
+ ### Interactive Website Simulations:
+  The platform offers interactive simulations that allow users to navigate through various online scenarios without exposing themselves to actual risk. Whether it involves evaluating suspicious links, deciding against sharing credit card information, or refraining from sending personal addresses, users can explore the consequences of their actions in a safe environment.
+   ### Chat Interactions:
+   Our chat feature is a simulated environment that replicates conversations with strangers, providing users with predetermined response options rather than allowing free text. When a user selects an answer, if the choice involves a potential risk, we promptly inform and educate them about the dangers involved. This interactive experience is designed to teach users the dos and don'ts of communicating with unknown individuals online.
 
 ##  Technology Stack
 

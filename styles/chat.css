@@ -1,0 +1,185 @@
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.Chat {
+  margin-top:90px;
+  background-image: Url("/chatpage-background1.png");
+  background-size: 90%;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 12px;
+}
+
+.chat-box {
+  background-image: Url("/chat-background1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 0.3s ease;
+  border: 1px solid #365258;
+  border-radius: 20px;
+  padding: 0px;
+  width: 650px;
+  height:450px;
+  margin: 20px auto;
+  margin-top: 11px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/*.chat-box:hover {
+  transform: scale(1.03);
+  /* Floating Effect
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transform: translateY(-5px);
+}*/
+
+.chat-box-header{
+  display: flex;
+  flex-direction: row;
+  /*justify-content: space-between;*/
+  height: 76px;
+  background-color: #006363;
+  border-radius: 20px 20px 0px 0px;
+}
+
+
+.bot-name {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  color: white;
+  align-self: flex-start;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  letter-spacing: 1px;
+}
+
+.bot-profile{
+  margin-left: 10px;
+  margin-top:5px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 66px;
+  height: 66px;
+}
+
+.messages {
+  height: 200px;
+  width: 600px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 5px;
+  display: flex;
+  overflow-y: auto;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.message {
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 15px;
+  max-width: 75%;
+  word-wrap: break-word;
+}
+
+.user-message {
+  background-color: rgba(142,199,183,1);
+  color: black;
+  align-self: flex-end;
+  border-bottom-right-radius: 0; /* makes the bubble look like it's pointing to the user */
+}
+
+.bot-message {
+  background-color: rgba(255, 255, 255, 1);
+  color: black;
+  align-self: flex-start;
+  border-bottom-left-radius: 0; /* makes the bubble look like it's coming from the bot */
+}
+
+.choices{
+  color: rgba(142,199,183,1);
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.choice-button {
+  transition: background-color 0.3s, border-color 0.3s;
+  color: black;
+  background-color: rgba(142,199,183,1);
+  width:33%;
+  height:80px;
+  align-self: center;
+  margin-bottom: 5px;
+  margin-top: auto;
+  border-radius: 20px;
+  border-color: rgba(142,199,183,0.7);
+}
+
+.choice-button:hover {
+  background-color: rgba(142,199,183,0.8);
+  color: white;
+  border-color: rgba(142,199,183,1);
+}
+
+.choice-button.selected {
+  background-color: rgba(0, 99, 99,1);
+  border-color: rgba(0, 99, 99,0.8);
+  color:white;
+  /*background-color: #4CAF50;
+  border-color: #367a38;*/
+}
+
+.send-button {
+  padding: 9px 15px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px;
+  cursor: pointer;
+  align-self: center;
+  margin-top: auto;
+  width: 100%;
+}
+
+.send-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px; /* Adjust as needed */
+  height: 300px; /* Adjust as needed */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000; /* Make sure it's above other elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-avatar {
+  width: 80%; /* Adjust as needed */
+  height: auto;
+}

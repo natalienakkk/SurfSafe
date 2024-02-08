@@ -1,13 +1,14 @@
+import Head from 'next/head'
+import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/router';
 
-import styles from '../styles/App.css'
 
-import React, { useState, useEffect } from 'react';
+function Chat() {
+  const router = useRouter()
 
-function App() {
-const [messages, setMessages] = useState([]);
   const [selectedChoice, setSelectedChoice] = useState('');
-  const [choices, setChoices] = useState([])
-  const [cookie, setCookie] =useState(null);
+  const [messages, setMessages] = useState([]);
+  const [choices, setChoices] = useState([]);
 
   useEffect(() => {
     // Reset the state to 'greeting' at the start of a new session
@@ -27,63 +28,43 @@ const [messages, setMessages] = useState([]);
       body: JSON.stringify({ userResponse: choice }),
       credentials: 'include', // Required for cookies to be sent and received
     });
-
     if (response.ok) {
       const data = await response.json();
-      if (data.message === "true"){
-        console.log("helloooooooooooooooooooooooooo");
-      }
 
-      // Update the cookie with the new stat
-      else{
-      document.cookie = `currentState=${data.nextState}; path=/`;
-      if (choice!==''){setMessages(messages => [...messages, data.message]);}
+    // Update the cookie with the new state
+       document.cookie = `currentState=${data.nextState}; path=/`;
+      setMessages(messages => [...messages, data.message]);
       setChoices(data.userChoices || []);}
-    } else {
+    else {
       console.error('Error fetching choices');
-    }
-  };
-
-
-  const getNextChoices = (choice) => {
-    if (choice === 'Choice 1') {
-      return ['Choice 1.1', 'Choice 1.2'];
-    } else if (choice === 'Choice 2') {
-      return ['Choice 2.1', 'Choice 2.2', 'Choice 2.3'];
-    } else {
-      return ['Choice 3.1'];
-    }
-  };
-
-  const handleSend = () => {
-    console.log('User selected:', selectedChoice);
-    // send the choice to the backend
+  }
   };
 
   return (
-    <div className="App">
+    <div className="Chat">
       <div className="chat-box">
+        <div className="chat-box-header">
+          <img src="/sally-avatar.png" className = "bot-profile"></img>
+          <h2 className = "bot-name"> Sally </h2>
+        </div>
         <div className="messages">
           {messages.map((msg, index) => (
-            <div key={index} className="message">{msg}</div>
-          ))}
+              <div key={index} className={`message ${index % 2 === 1 ? 'bot-message' : 'user-message'}`} > {msg} </div>
+        ))}
         </div>
         <div className="choices">
           {choices.map((choice, index) => (
-            <button
+          <button
             key={index}
             onClick={() => handleChoiceSelect(choice)}
             className={`choice-button ${selectedChoice === choice ? 'selected' : ''}`}
             >
             {choice}
-            </button>
+          </button>
           ))} </div>
-        <button onClick={handleSend} className="send-button" disabled={!selectedChoice}>
-          Send
-        </button>
       </div>
     </div>
   );
 }
 
-export default App;
+export default Chat;

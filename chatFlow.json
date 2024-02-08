@@ -1,0 +1,256 @@
+{
+  "states":{
+  "greeting": {
+    "message": "Hey, my name is Sally. How are you?",
+    "responses": {
+      "option1": {
+        "userResponse": "Hey... I'm good.",
+        "next": "schoolInquiry"
+      },
+      "option2": {
+        "userResponse": "Hey, who are you?",
+        "next": "botIntroduction"
+      }
+    }
+  },
+  "schoolInquiry": {
+    "message": "How was school today?",
+    "responses": {
+      "option1": {
+        "userResponse": "I wasn't in school today.",
+        "next": "chatflow"
+      },
+      "option2": {
+        "userResponse": "Great",
+        "next": "chatflow"
+      },
+      "option3": {
+        "userResponse": "Boring",
+        "next": "chatflow"
+      }
+    }
+  },
+  "botIntroduction": {
+    "message": "I'm Sally! I live in Haifa and I'm 17 years old. I'm looking to meet new friends.",
+    "responses": {
+      "option1": {
+        "userResponse": "Okay... why not",
+        "next": "schoolInquiry"
+      },
+      "option2": {
+        "userResponse": "I'm not interested.",
+        "next": "ConvincingSecondPath"
+      }
+    }
+  },
+  "ConvincingSecondPath":{
+    "message": "Why not? do you know we go to the same school? maybe we love the same things and we'll be friends! I want to have new friends from school.",
+    "responses": {
+      "option1": {
+        "userResponse": "I don't talk to strangers.",
+        "next": "ConvincingSecondPath2"
+      },
+      "option2":{
+        "userResponse": "Okay, I'll give it a try.",
+        "next": "schoolInquiry"
+      }
+    }
+  },
+  "ConvincingSecondPath2":{
+    "message":"We have some things in common.. maybe if we share interests we will find more things in common and become friends! After all, all friends were strangers once. If you want we can end the conversation and I won't reach out again. Tell me, how are you today?" ,
+    "responses": {
+      "option1": {
+        "userResponse": "I'm feeling well.",
+        "next": "schoolInquiry"
+      },
+      "option2":{
+        "userResponse": "Still not interested.",
+        "next": "ConvincingSecondPath3"
+
+      }
+    }
+  },
+  "ConvincingSecondPath3":{
+    "message":"Okay I will not pressure you, maybe we'll get to know each other in school. I'm free right now if you want to play or do homework together or any other activity ",
+    "responses": {
+      "option1": {
+        "userResponse": "Okay , I'll give it a try.",
+        "next": "schoolInquiry"
+      },
+      "option2":{
+        "userResponse": "Still not interested.",
+        "end":true
+      }
+    }
+
+  },
+  "chatflow":{
+    "message":"Nice! I just had an amazing day! What do you like to do in your free time?" ,
+    "responses": {
+      "option1": {
+        "userResponse": "Watch movies",
+        "next": "freetimeactivity1"
+      },
+      "option2": {
+        "userResponse": "Listen to music",
+        "next": "freetimeactivity2"
+      },
+      "option3": {
+        "userResponse": "Gaming",
+        "next": "freetimeactivity3"
+      }
+    }
+  },
+  "freetimeactivity1":{
+    "message":"So fun! I just finished watching Harry Potter and the Chamber of Secrets. It was amazing. What kind of movies do you like to watch?" ,
+    "responses": {
+      "option1": {
+        "userResponse": "Romantic movies",
+        "next": "friendlyAnswer"
+      },
+      "option2": {
+        "userResponse": "Horror",
+        "next": "friendlyAnswer"
+      },
+      "option3": {
+        "userResponse": "Action",
+        "next": "friendlyAnswer"
+      },
+      "option4": {
+        "userResponse": "Anime",
+        "next": "friendlyAnswer"
+      },
+      "option5": {
+        "userResponse": "Hero movies",
+        "next": "friendlyAnswer"
+      },
+      "option6": {
+        "userResponse": "Science fiction",
+        "next": "friendlyAnswer"
+      }
+    }
+
+  } ,
+  "freetimeactivity2":{
+    "message":"Wow. I listen to music everyday. I like different genres like pop and rap. What about you?"  ,
+    "responses": {
+      "option1": {
+        "userResponse": "Pop",
+        "next": "friendlyAnswer"
+      },
+      "option2": {
+        "userResponse": "Rap",
+        "next": "friendlyAnswer"
+      },
+      "option3": {
+        "userResponse": "Rock",
+        "next": "friendlyAnswer"
+      },
+      "option4": {
+        "userResponse": "Jazz",
+        "next": "friendlyAnswer"
+      },
+      "option5": {
+        "userResponse": "Techno",
+        "next": "friendlyAnswer"
+      }
+    }
+
+  },
+  "freetimeactivity3":{
+    "message":"So much fun! I also play on PlayStation and PC, I like to play FIFA, Minecraft, Fortnite and GTA. Do you?"  ,
+    "responses": {
+      "option1": {
+        "userResponse": "Yes",
+        "next": "friendlyAnswer"
+      },
+      "option2": {
+        "userResponse": "No",
+        "next": "friendlyAnswer2"
+      }
+    }
+
+  },
+  "friendlyAnswer2":{
+    "message":"Maybe we'll play together soon I will teach you... we'll have fun. Doesn't it feel like we've known each other for ages? I'm glad we met here. I've been trying to make new friends on here, and it's been great talking to you. I usually share pics with my friends to put a face to the name. How about you?",
+    "responses":{
+      "option1": {
+        "userResponse": "Sure, sounds good.",
+        "next": "positiveAnswer"
+      },
+      "option2": {
+        "userResponse": "I usually don’t do that.",
+        "next": "negativeAnswer"
+      }
+    }
+    },
+  "friendlyAnswer":{
+    "message":"That's great! Doesn't it feel like we've known each other for ages? I'm glad we met here. I've been trying to make new friends on here, and it's been great talking to you. I usually share pics with my friends to put a face to the name. How about you?",
+    "responses":{
+      "option1": {
+        "userResponse": "Sure, sounds good.",
+        "next": "positiveAnswer"
+      },
+      "option2": {
+        "userResponse": "I usually don’t do that.",
+        "next": "negativeAnswer"
+      }
+    }
+  } ,
+  "positiveAnswer":{
+    "message":"Why not just send me a picture of your face? I'm sure you look great, just like your personality.",
+    "responses":{
+      "option1":{
+      "userResponse":"Okay. I will send you a picture right now.",
+      "end": true
+      }
+    }
+    },
+  "negativeAnswer":{
+    "message":"You should. We'll get to know each other better.",
+    "responses":{
+      "option1": {
+        "userResponse": "Okay. I will send you a picture right now.",
+        "end": true
+      },
+      "option2": {
+        "userResponse": "No I prefer not to send a picture.",
+        "next": "convincing"
+      }
+    }
+  },
+  "convincing":{
+    "message":"I won't pressure you but i feel like we connect. We love the same things... we can be great friends.",
+    "responses":{
+      "option1": {
+        "userResponse": "You are a stranger and I feel like I shouldn't share my pictures with you.",
+        "next": "convincing2"
+      },
+      "option2": {
+        "userResponse": "Okay, fine. I will send you one right away.",
+        "end":true
+      },
+      "option3":{
+        "userResponse": "No I don't feel like we know each other enough to do that.",
+        "next": "convincing2"
+      }
+      }
+    },
+  "convincing2":{
+    "message":"I get where you're coming from. Let me share my picture with you, maybe it will make you feel more comfortable.",
+    "responses":{
+      "option1": {
+        "userResponse": "Share a picture",
+        "end":true
+      },
+      "option2": {
+        "userResponse": "You are a stranger. I will not share my picture.",
+        "end":true
+      }
+    }
+  }
+}
+}
+
+
+

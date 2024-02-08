@@ -1,31 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+:root {
+  --background-color: #004065;
+  --primary-color: #F0F9FF;
+  --secondary-color: #002033;
+  --button-color: #46728b;
+  --card-color: #062943;
+}
 
 body {
-  background: #f2f2f2;
+  background: var(--background-color);
   color: #333;
-  font-family: "Nunito";
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
 }
 a {
   color: #333;
   text-decoration: none;
 }
 .content {
-  max-width: 960px;
-  margin: 0 auto;
+  /* max-width: 960px; */
+  margin: 0;
 }
-nav {
-  margin: 10px auto 80px;
-  padding: 10px 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  border-bottom: 1px solid #ddd;
-}
+
 nav a {
   margin-left: 12px;
-}
-nav .logo {
-  margin-right: auto;
 }
 footer {
   display: block;
@@ -33,7 +32,9 @@ footer {
   padding: 30px 0;
   margin-top: 60px;
   color: #777;
-  border-top: 1px solid #eaeaea;
+  /* background-color: wheat; */
+  /* z-index: 2; */
+  border-top: 1px solid var(--primary-color);
 }
 .not-found {
   text-align: center;
@@ -42,3 +43,58 @@ footer {
   color: #4979ff;
   text-decoration: underline;
 }
+
+
+/* NavBar Style */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 90px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color); 
+  box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  z-index: 500;
+}
+
+.navbar .logo-and-title {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.navbar .logo {
+  padding-top: 33px;
+  padding-left: 30px;
+  height: 140px; 
+  width: 140;
+}
+
+.navbar .title {
+  color: var(--background-color);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  padding-top: 25px;
+  padding-left: 155px;
+  position: absolute;
+  white-space: nowrap;
+}
+
+ .linkNav {
+  text-decoration: none;
+  color: white;
+  background-color: var(--card-color);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.menu{
+  padding-top: 20px;
+  margin-top: 20px;
+  margin-right: 40px;
+}
+

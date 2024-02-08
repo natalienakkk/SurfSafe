@@ -1,7 +1,9 @@
 import Layout from '../comps/Layout'
 import '../styles/globals.css'
+import '/styles/chat.css'
 
 function App({ Component, pageProps }) {
+  
   return (
     <Layout>
       <Component {...pageProps} />
